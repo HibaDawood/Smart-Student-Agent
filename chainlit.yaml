@@ -1,0 +1,64 @@
+# Welcome to Your AI Assistant! 🤖
+
+This is your personal AI chatbot with persistent chat history. Your conversations are automatically saved and you can access them anytime.
+
+## Features:
+- 💬 **Persistent Chat History** - All your conversations are saved
+- 🆕 **Multiple Sessions** - Create new chats anytime  
+- 📂 **Easy Navigation** - Switch between different conversations
+- 🗑️ **Session Management** - Delete unwanted chats
+- 🔄 **Auto-Save** - Everything saves automatically
+
+## How to Use:
+1. Start chatting normally
+2. Use the sidebar to create new chats or load previous ones
+3. Your chat history will persist even after page refresh
+4. Click on any previous chat to continue the conversation
+
+Enjoy chatting! 🚀
+\`\`\`
+
+```python file="config.py"
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+
+# Chainlit Configuration
+CHAINLIT_CONFIG = {
+    "theme": {
+        "primary_color": "#007acc",
+        "background_color": "#ffffff",
+        "text_color": "#000000"
+    },
+    "ui": {
+        "name": "Smart Student Agent",
+        "description": "Your Personal AI Chatbot",
+        "favicon": "🤖",
+        "show_readme_as_default": True,
+        "default_collapse_content": False,
+        "github": None,
+        
+    },
+    "features": {
+        "multi_modal": True,
+        "speech_to_text": False,
+        "unsafe_allow_html": False,
+        "latex": True
+    }
+}
+
+# API Configuration  
+GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
+GEMINI_MODEL = "gemini-2.0-flash"
+
+# Database Configuration
+DATABASE_PATH = "chat_history.db"
+MAX_SESSIONS_PER_USER = 100
+MAX_MESSAGES_PER_SESSION = 1000
+
+# UI Messages
+WELCOME_MESSAGE = "Hello! How can I help you today?"
+NEW_CHAT_MESSAGE = "🆕 New Chat Started"
+CHAT_LOADED_MESSAGE = "📂 Chat Loaded"
+CHAT_DELETED_MESSAGE = "🗑️ Chat Deleted"
