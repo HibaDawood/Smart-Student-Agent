@@ -17,11 +17,11 @@ An intelligent learning assistant ecosystem engineered using **pure Python logic
 
 Since this application runs on a localized runtime environment, any user can execute and test your agent by following these three straightforward steps:
 
-# Clone the repository and enter the directory
+### Clone the repository and enter the directory
 git clone https://github.com/HibaDawood/Smart-Student-Agent.git && cd Smart-Student-Agent
 
-# Install the Chainlit interface framework
+### Install the Chainlit interface framework
 pip install chainlit
 
-# Launch the live interactive chat server
+### Launch the live interactive chat server
 chainlit run main.py -w
